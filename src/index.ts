@@ -1,6 +1,6 @@
-import * as components from "./componets/index.js";
-import {bringApi} from "./data.js"
-import Card, { Attribute1 } from "./componets/card/card.js";
+import  "./componets/index";
+import {bringApi} from "./data"
+import Card, { Attribute1 } from "./componets/card/card";
 
 
 
@@ -26,7 +26,7 @@ class appcontainer extends HTMLElement {
                 this.container1.push(startshipCard);
         });
         this.render(this.container1);
-    }render(container1:any) {
+    }render(container1: any) {
                     
         this.shadowRoot!.innerHTML = `
         <link rel="stylesheet" href="./index.css">`
@@ -37,6 +37,8 @@ class appcontainer extends HTMLElement {
                 startshipCards.appendChild(startshipCard);
             })
             this.shadowRoot?.appendChild(startshipCards);
-        }}
+        }
+}
+    
     
         customElements.define("app-container", appcontainer);
