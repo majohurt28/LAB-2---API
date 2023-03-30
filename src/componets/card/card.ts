@@ -41,7 +41,7 @@ class starCard extends HTMLElement{
     render(){
         if (this.shadowRoot){
             this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="./app/components/featured/featured.css">
+           
             
             <div class="containercard">
             <h1>${this.name}</h1>

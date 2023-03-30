@@ -12,30 +12,28 @@ class appcontainer extends HTMLElement {
     }
     async connectedCallback() {
         const starData = await bringApi();
-        starData.forEach((user: any) => {
-            console.log(user);
+        starData.forEach((data: any) => {
+            console.log(data);
         });
 
-        starData.forEach((user: any) => {
+        starData.forEach((data: any) => {
             const startshipCard = this.ownerDocument.createElement(
                 "starship-contentcard"
                 ) as Card;
-                startshipCard.setAttribute(Attribute1.name, user.name);
-                startshipCard.setAttribute(Attribute1.model, (user.model));
-                startshipCard.setAttribute(Attribute1.manufacturer, user.manufacturer);
+                startshipCard.setAttribute(Attribute1.name, data.name);
+                startshipCard.setAttribute(Attribute1.model, data.model);
+                startshipCard.setAttribute(Attribute1.manufacturer, data.manufacturer);
                 this.container1.push(startshipCard);
         });
         this.render(this.container1);
     }render(container1: any) {
                     
-        this.shadowRoot!.innerHTML = `
-        <link rel="stylesheet" href="./index.css">`
 
         const startshipCards = this.ownerDocument.createElement("section");
         startshipCards.className ='star-container'
             this.container1.forEach((startshipCard)=>{
                 startshipCards.appendChild(startshipCard);
-            })
+            });
             this.shadowRoot?.appendChild(startshipCards);
         }
 }

@@ -1,1 +1,1 @@
-export {default as  starCard} from "./card/card.js"
+export {default as  starCard} from "./card/card"
