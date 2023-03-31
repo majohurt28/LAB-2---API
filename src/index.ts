@@ -12,6 +12,7 @@ class appcontainer extends HTMLElement {
     }
     async connectedCallback() {
         const starData = await bringApi();
+        console.log(starData);
         starData.forEach((data: any) => {
             console.log(data);
         });
